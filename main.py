@@ -1,5 +1,10 @@
+import random
+
 board = []
 box = 0
+def cMove():
+    random.choice(moves)
+
 
 for column in range(3):
     # print("+", "-"*7, sep="", end="+")
@@ -34,25 +39,27 @@ while True:
     uMove = int(input("Enter your move: "))
     if uMove in moves:
         print('good move amigo: ', moves[uMove])
+        if uMove == 1:
+            board[0][0] = '0'
+        elif uMove == 2:
+            board[0][1] = '0'
+        elif uMove == 3:
+            board[0][2] = '0'
+        elif uMove == 4:
+            board[1][0] = '0'
+        elif uMove == 5:
+            board[1][1] = 'O'
+        elif uMove == 6:
+            board[1][2] = '0'
+        elif uMove == 7:
+            board[2][0] = '0'
+        elif uMove == 8:
+            board[2][1] = '0'
+        elif uMove == 9:
+            board[2][2] = '0'
+
+        moves.pop(uMove)
+        cMove()
 
     for row in board:   
         print (row)
-
-
-# one     = board[0][0]
-# two     = board[0][1]
-# three   = board[0][2]
-# four    = board[1][0]
-# five    = board[1][1]
-# six     = board[1][2]
-# seven   = board[2][0]
-# eight   = board[2][1]
-# nine    = board[2][2]
-
-
-# board[0][0] = " ROOK "
-# board[0][7] = " ROOK "
-# board[7][0] = " ROOK "
-# board[7][7] = " ROOK "
-# board[4][2] = "KNIGHT"
-# board[3][4] = " PAWN "
